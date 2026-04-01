@@ -6,13 +6,13 @@ Application de suivi médical et sportif composée d'un backend Node.js/Express,
 
 Le projet est organisé autour de trois services conteneurisés orchestrés par Docker Compose :
 
-- **backend** : API REST Node.js/Express exposée sur le port 3000
-- **frontend** : interface HTML servie par Nginx sur le port 80, avec proxy des requêtes `/api/*` vers le backend
+- **backend** : API REST Node.js/Express exposée sur le port 3003
+- **frontend** : interface HTML servie par Nginx sur le port 82, avec proxy des requêtes `/api/*` vers le backend
 - **database** : PostgreSQL 16 avec volume persistant
 
 ```mermaid
 graph TD
-    User -->|HTTP :80| Frontend
+    User -->|HTTP :82| Frontend
     Frontend -->|proxy /api/*| Backend
     Backend -->|SQL :5432| Database
     CI[GitHub Actions] -->|build + push| Registry[Docker Hub]
@@ -35,8 +35,8 @@ cp .env.example .env
 docker-compose up --build
 ```
 
-Le frontend est accessible sur `http://localhost:80`.
-L'API est accessible sur `http://localhost:3000`.
+Le frontend est accessible sur `http://localhost:82`.
+L'API est accessible sur `http://localhost:3003`.
 
 ## Pipeline CI/CD
 
