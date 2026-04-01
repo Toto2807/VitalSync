@@ -1,5 +1,5 @@
 const express = require("express");
-const app = express();
+const app = express(); // Mofi by add-endpoint
 
 app.get("/health", (req, res) => {
     res.json({ status: "ok", timestamp: new Date() });
