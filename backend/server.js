@@ -1,5 +1,5 @@
 const express = require("express");
-const app = express();
+const app = express(); // Modif by update-health
 
 app.get("/health", (req, res) => {
     res.json({ status: "ok", timestamp: new Date() });
