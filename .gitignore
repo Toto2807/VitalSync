@@ -1,0 +1,16 @@
+# Ignore node modules, environment variables, logs, distribution files, and macOS system files
+node_modules/
+
+#Car les fichiers de configuration d'environnement peuvent contenir des informations sensibles  
+.env
+
+#car les fichiers de log peuvent être volumineux et ne sont pas nécessaires pour le contrôle de version
+*.log
+
+#car les fichiers de distribution sont générés et ne doivent pas être suivis par Git
+dist/
+
+#car les fichiers système de macOS ne sont pas pertinents pour le projet et peuvent être ignorés
+.DS_Store
+
+
